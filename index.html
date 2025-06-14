@@ -9,28 +9,30 @@
 <body>
     <script>
         //ゲームに関する設定
-        var config = {
+        const config = {
             type: Phaser.AUTO,
             width: 800,
             height: 600,
+            antialias: false,
             scene: {
                 preload: preload,
                 create: create,
                 update: update
             }
         };
+        
         function preload(){
           //背景の画像
-          this.load.image('back', 'back.png');
+          this.load.image("back", "./assets/back.png");
         }
         function create(){
-          this.add.image(400,300,'back');
+          this.add.image(400,300, "back");
         }
         function update(){
 
         }
         //ゲームオブジェクトの生成
-        var game = new Phaser.Game(config);
+        let game = new Phaser.Game(config);
     </script>
 </body>
 </html>
